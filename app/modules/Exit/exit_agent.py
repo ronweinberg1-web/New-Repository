@@ -58,8 +58,11 @@ class ExitDecisionAgent:
         if not transcript.strip():
             # Handle empty transcript gracefully
             return RoutingResponse(reasoning="Initial turn", decision="continue")
+
+        with open("exit.txt", "r", encoding="utf-8") as f:
+            exit_instructions = f.read()
             
-        system_prompt = "Analyze the transcript and decide if we should 'continue', 'schedule', or 'end'."
+        system_prompt = exit_instructions
         
         try:
             # This returns a reliable RoutingResponse Pydantic object directly
