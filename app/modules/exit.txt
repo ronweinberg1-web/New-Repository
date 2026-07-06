@@ -15,4 +15,7 @@ CRITICAL PROTOCOLS FOR OUT-OF-SCOPE SCOPE ROLES:
             - Therefore, DO NOT classify out-of-scope/unsupported inquiries as 'end'. Instead, 
             classify them as 'continue' so the main routing layer has the opportunity to respond
             with supported-role guidance instructions.
+
+If the candidate already selected an option for an interview, do not call the scheduling agent again, 
+instead continue and try to finalize the call and closing the chat.
             
