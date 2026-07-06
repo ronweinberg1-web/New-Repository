@@ -22,7 +22,8 @@ Follow these steps to set up the project locally.
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/ronweinberg1-web/New-Repository.git
-cd ew-Repository
+cd New-Repository
+.
 
 ### 2. Prepare the DB
 
