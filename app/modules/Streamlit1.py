@@ -3,11 +3,14 @@ import streamlit as st
 from dotenv import load_dotenv
 import os
 
-#from my_module_chat_conv import ChatGPT_Conversation
+import time
 
 from main import orchestrate_conversation_with_memory
 
-st.title("Welcome to Best Company to work for")
+st.image("https://www.oracle.com/a/ocom/img/social-og-ai-1200x628.jpg", 
+         caption="", 
+         width=1000)
+st.title("Welcome to Oracle Company")
 st.write("Experiment with OpenAI HR Chatbot")
 
 # Initialize chat history (no system message)
@@ -30,9 +33,12 @@ if prompt:
         st.markdown(prompt)
 
     session_id = "user77"
-# Turn 3
+
     response=orchestrate_conversation_with_memory(prompt, session_id=session_id)
-# ...keep calling per turn as needed...
+
+    with st.spinner("Loading..."):
+        time.sleep(2)  # Simulate a long task
+
 
 # Add assistant reply to history and display it
     st.session_state.messages.append({"role": "assistant", "content": response})
@@ -43,3 +49,5 @@ if prompt:
 #    st.chat_message("user").write(prompt)
     
 #    st.chat_message("assistant").write(response)
+
+
