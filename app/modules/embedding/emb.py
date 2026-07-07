@@ -5,6 +5,7 @@ from langchain.tools import tool
 
 from dotenv import load_dotenv
 import os
+from pathlib import Path
 
 # 1. Locate this specific file (emb.py)
 current_file_path = Path(__file__).resolve()
