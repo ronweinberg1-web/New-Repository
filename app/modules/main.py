@@ -74,7 +74,8 @@ advisor_prompt = ChatPromptTemplate.from_messages([
 ])
 
 advisor_agent = create_openai_tools_agent(llm, tools=datetool, prompt=advisor_prompt)
-advisor_executor = AgentExecutor(agent=advisor_agent, tools=datetool, verbose=True)
+advisor_executor = AgentExecutor(agent=advisor_agent, tools=datetool)
+# used for testing, verbose=True)
 
 # --- JOB AGENT ---
 with open("info.txt", "r", encoding="utf-8") as f:
@@ -88,7 +89,9 @@ job_prompt = ChatPromptTemplate.from_messages([
 ])
 
 job_agent = create_openai_tools_agent(llm, tools=jobtool, prompt=job_prompt)
-job_executor = AgentExecutor(agent=job_agent, tools=jobtool, verbose=True)
+job_executor = AgentExecutor(agent=job_agent, tools=jobtool)
+# used for testing, verbose=True)
+
 
 
 # --- 4. ORCHESTRATION ---

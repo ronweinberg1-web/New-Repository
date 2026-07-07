@@ -5,26 +5,10 @@ from langchain.tools import tool
 
 from dotenv import load_dotenv
 import os
-from pathlib import Path
 
-# 1. Locate this specific file (emb.py)
-current_file_path = Path(__file__).resolve()
-
-# 2. Travel up the directory tree to your project root
-# current_file_path                      -> .../app/modules/embedding/emb.py
-# current_file_path.parent               -> .../app/modules/embedding
-# current_file_path.parents[0]           -> .../app/modules/embedding
-# current_file_path.parents[1]           -> .../app/modules
-# current_file_path.parents[2]           -> .../app/          
-# current_file_path.parents[3]           -> .../New-Repository/ <- (If .env is here)
-
-# Let's target 3 levels up (New-Repository root). Adjust the number if your structure differs.
-project_root = current_file_path.parents[3] 
-env_path = project_root / '.env'
-
-load_dotenv(dotenv_path=env_path)  # Load variables from .env file
+load_dotenv()  # Load variables from .env file
 api_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key=api_key)
+client = OpenAI()
 chroma_client = chromadb.Client()
 collection = chroma_client.get_or_create_collection(name="my_collection_openai")
 
