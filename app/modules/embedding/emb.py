@@ -9,7 +9,7 @@ import os
 
 load_dotenv()  # Load variables from .env file
 api_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI()
+client = OpenAI(api_key=api_key)
 chroma_client = chromadb.Client()
 collection = chroma_client.get_or_create_collection(name="my_collection_openai")
 
