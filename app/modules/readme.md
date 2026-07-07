@@ -22,8 +22,7 @@ Follow these steps to set up the project locally.
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/ronweinberg1-web/New-Repository.git
-cd New-Repository
-.
+
 
 ### 2. Prepare the DB
 
@@ -42,3 +41,10 @@ DATABASE - the DB name, i.e. tech
 DRIVER - the driver to be used, i.e. ODBC+Driver+17+for+SQL+Server
 DB_USERNAME - the user that was set in the DB 
 DB_PASSWORD - the password set for the DB user
+
+
+### 4. Run the project
+```bash
+cd New-Repository
+cd .\app\modules\
+streamlit run .\Streamlit1.py
