@@ -138,7 +138,13 @@ pip install -r requirements.txt
 
 ### 4. Configure Environment Variables
 
-Create a `.env` file at the project root with:
+Copy `.env_sample` (at the project root) to `.env` and fill in the values:
+
+```bash
+cp .env_sample .env
+```
+
+The `.env` file must be at the project root with:
 
 | Variable | Description |
 |---|---|
@@ -155,3 +161,9 @@ Create a `.env` file at the project root with:
 cd app\modules
 streamlit run Streamlit1.py
 ```
+
+## Authors
+
+- Yohay Asraf | ID: 03796841
+- Meir Hayun | ID: 200842920
+- Ron Weinberg | ID: 029367836
